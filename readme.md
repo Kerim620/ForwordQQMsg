@@ -21,3 +21,7 @@
 
 ![QQ图片20210925145616](https://gitee.com/zzzjoy/My_Pictures/raw/master/202109251520737.png)
 
+## TODO
+
+1. 更多消息类型推送
+2. 更多推送渠道和模板
