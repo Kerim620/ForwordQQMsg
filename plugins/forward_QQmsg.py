@@ -4,7 +4,7 @@ from nonebot import on_natural_language, NLPSession
 import wxpush
 
 
-@on_natural_language(only_to_me=False, only_short_message=False)
+@on_natural_language(only_to_me=False, only_short_message=False, allow_empty_message=True)
 async def _(session: NLPSession, ):
     bot = nonebot.get_bot()
     # 转发群消息
@@ -38,7 +38,7 @@ async def _(session: NLPSession, ):
                 config.pravitechat_rule['rule_type'] == 3:
             # 获取发送人备注
             friend_list = (await bot.get_friend_list())
-            friend_name = ''
+            friend_name = session.ctx['sender']['nickname']
             for item in friend_list:
                 if item['user_id'] == user_id:
                     friend_name = item['remark']
