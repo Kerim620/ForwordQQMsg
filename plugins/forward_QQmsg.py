@@ -4,14 +4,13 @@ from nonebot import on_natural_language, NLPSession
 import wxpush
 
 
-@on_natural_language(only_to_me=False)
+@on_natural_language(only_to_me=False, only_short_message=False)
 async def _(session: NLPSession, ):
     bot = nonebot.get_bot()
     # 转发群消息
     if session.ctx['message_type'] == 'group':
         # 获取群号码
         group_id = session.ctx['group_id']
-        # logger.info(str(group_id) in config.group_rule['whitelist'].keys())
         # 获取发送人号码
         user_id = session.ctx['user_id']
         if (config.group_rule['rule_type'] == 1 and group_id not in config.group_rule['blacklist']) or \
@@ -20,7 +19,7 @@ async def _(session: NLPSession, ):
                   len(config.group_rule['whitelist'][str(group_id)]) == 0)) or \
                 config.group_rule['rule_type'] == 3:
             # 获取群昵称
-            group_name = (await bot.get_group_info(group_id=session.ctx['group_id']))['group_name']
+            group_name = (await bot.get_group_info(group_id=group_id))['group_name']
             # 获取发送人群名字
             user_name = session.ctx['sender']['card']
             if user_name == '':
