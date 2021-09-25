@@ -20,3 +20,8 @@
 ## 效果图
 
 ![QQ图片20210925145616](https://gitee.com/zzzjoy/My_Pictures/raw/master/202109251520737.png)
+
+## TODO
+
+* 完善各类消息通知
+* 更多推送渠道和模板
