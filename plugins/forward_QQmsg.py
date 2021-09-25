@@ -60,11 +60,11 @@ def raw_msg(session):
         elif message_type == 'image':
             raw_message += '<a href="' + session.ctx['message'][i]['data']['url'] + '">图片消息</a>\n'
         elif message_type == 'video':
-            raw_message += '<a href="' + session.ctx['message'][i]['data']['url'] + '">视频消息</a>\n'
+            raw_message += '【语音消息】\n'
         elif message_type == 'record':
-            raw_message += '【不支持的语音消息】\n'
+            raw_message += '【语音消息】\n'
         elif message_type == 'face':
-            raw_message += '【不支持的表情消息】\n'
+            raw_message += '【表情消息】\n'
         else:
             raw_message = '【不支持的消息类型】\n'
     return raw_message

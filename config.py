@@ -1,5 +1,4 @@
 ﻿from nonebot.default_config import *
-
 HOST = '127.0.0.1'
 PORT = 8881
 DEBUG = False
@@ -7,13 +6,13 @@ DEBUG = False
 
 # 推送渠道配置
 # pushplus_token和qywx_config为各自配置，不用多说
-# 默认走所有推送渠道，不走某渠道留空。
+# 默认走所有推送渠道，不走某渠道请填''。
 push_way = {
-    'pushplus_token': 'f1d396a853bb4821931cbc620085bd99',
+    'pushplus_token': '',
     'qywx_config': {
         'wx_aid': '1000002',
-        'wx_cid': 'ww1897917972459ba6',
-        'wx_secret': 'T_vovjoZUh7jE5jYs3yYvQGno58RE5LokLcRvmsjmW4',
+        'wx_cid': 'ww1891441414459ba6',
+        'wx_secret': 'T_vovjoZUh7jE5jYHsjjxce4E5LokLcRvmsjmW4',
     }
 }
 
@@ -25,7 +24,7 @@ push_way = {
 # whitelist为dict，其中key为string，填白名单群号码；value为int[]，填群里白名单成员号码，为空则无群成员白名单。
 # 比如以下配置为：转发群1234567中成员245436666和成员222555的消息，转发群111111的全部消息
 group_ruls = {
-    'rule_type': 3,
+    'rule_type': 2,
     'blacklist': [88888888, 99999999],
     'whitelist': {
         '1234567': [245436666, 222555],
@@ -40,7 +39,7 @@ group_ruls = {
 # whitelist为int[]，填写好友号码。
 # 比如以下配置为：不转发好友88888888和99999999的消息
 pravitechat_rule = {
-    'rule_type': 3,
+    'rule_type': 1,
     'blacklist': [88888888, 99999999],
     'whitelist': [4144896312, 99999999],
 }
