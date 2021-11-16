@@ -1,7 +1,7 @@
 ﻿from nonebot.default_config import *
 
 HOST = '127.0.0.1'
-PORT = 8881
+PORT = 8882
 DEBUG = False
 
 
